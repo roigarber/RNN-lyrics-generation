@@ -1,3 +1,26 @@
+
+
+# RNN Lyrics Generation
+![Image](https://github.com/user-attachments/assets/252e361d-1461-472d-8e42-d7f6037ae0b5)
+
+
+This project explores using Long Short-Term Memory (LSTM) networks to generate song lyrics conditioned on a provided melody. Trained on paired lyric and MIDI data, the model learns to fuse musical and textual features and produce context-appropriate next-word predictions in PyTorch.
+
+
+
+## Table of Contents
+
+1. [Overview](#overview)  
+2. [Data](#data)  
+3. [Model architecture](#model-architecture)  
+4. [Training and Experiments](#training-and-experiments)  
+5. [Results](#results)  
+6. [Conclusion](#conclusion)  
+7. [Authors](#authors) 
+## Overview
+
+Two variants of an LSTM-based lyric generator were implemented. During training, each time step receives both a Word2Vec embedding of the current word and features extracted from the corresponding segment of the melody. At inference time, the network samples its probability distribution to produce novel lyrics for unseen melodies.
+
 ## Data
 
 ### Dataset overview
@@ -21,6 +44,7 @@ All lyric text was cleaned by removing non-alphanumeric characters, normalizing 
 Example of the train DF:
 
 ![Image](https://github.com/user-attachments/assets/ee1393a0-d736-41ba-9860-e8e6115e641e)
+
 
 
 ## Model architecture
@@ -68,11 +92,11 @@ Both the word‐level and song‐level variants were trained using the notebook�
 
 Training curves showed a steady decrease in both loss and MSE, accompanied by rising cosine similarity on the validation set. Early stopping triggered after 15 epochs for the word‐level model and 17 epochs for the song‐level model, yielding the checkpoints with the best generalization performance.
 
-Example of training on the word-level method:
+**Example of training on the word-level method:**
 
 ![Image](https://github.com/user-attachments/assets/c4dfe9aa-0eb1-4457-9404-e56186b54aee)
 
-Example of training on the song‐level method:
+**Example of training on the song‐level method:**
 
 ![Image](https://github.com/user-attachments/assets/ce5a6e4d-e9dd-49f1-812b-f950e8098813)## Results
 
@@ -81,14 +105,14 @@ Example of training on the song‐level method:
 ![Image](https://github.com/user-attachments/assets/6d252580-8214-4904-a8c8-41a5d0a3bc90) 
 ![Image](https://github.com/user-attachments/assets/f251b005-8e28-424c-bc39-3269e577b45e)
 
-_Final validation loss: 5.85, MSE: 0.0001, Cosine sim: 0.15_
+**_Final validation loss: 5.85, MSE: 0.0001, Cosine sim: 0.15_**
 
 ### Song-level Model
 
 ![Image](https://github.com/user-attachments/assets/188b988f-d713-4b79-9890-0d326016de0f)
 ![Image](https://github.com/user-attachments/assets/a07e5877-bf43-4142-8fa7-19fcc127cc5d)
 
-_Final validation loss: 6.02, MSE: 0.0001, Cosine sim: 0.14_
+**_Final validation loss: 6.02, MSE: 0.0001, Cosine sim: 0.14_**
 
 
 
