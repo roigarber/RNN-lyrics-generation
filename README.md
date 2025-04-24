@@ -1,25 +1,3 @@
-
-# RNN Lyrics Generation
-![Image](https://github.com/user-attachments/assets/252e361d-1461-472d-8e42-d7f6037ae0b5)
-
-
-This project explores using Long Short-Term Memory (LSTM) networks to generate song lyrics conditioned on a provided melody. Trained on paired lyric and MIDI data, the model learns to fuse musical and textual features and produce context-appropriate next-word predictions in PyTorch.
-
-
-
-## Table of Contents
-
-1. [Overview](#overview)  
-2. [Data](#data)  
-3. [Model architecture](#model-architecture)  
-4. [Training and Experiments](#training-and-experiments)  
-5. [Results](#results)  
-6. [Conclusion](#conclusion)  
-7. [Authors](#authors) 
-## Overview
-
-Two variants of an LSTM-based lyric generator were implemented. During training, each time step receives both a Word2Vec embedding of the current word and features extracted from the corresponding segment of the melody. At inference time, the network samples its probability distribution to produce novel lyrics for unseen melodies.
-
 ## Data
 
 ### Dataset overview
@@ -30,7 +8,10 @@ To illustrate, here is a snippet of the test set:
 
 ![Image](https://github.com/user-attachments/assets/0eaa60a9-0d84-4ee6-8c50-c1caa1b1dbbd)
 
-Most common words: 
+
+**Most common words**: 
+
+
 ![Image](https://github.com/user-attachments/assets/95c24220-7223-402f-a0a8-24ab42944de5)
 
 ### Preprocessing
@@ -40,7 +21,6 @@ All lyric text was cleaned by removing non-alphanumeric characters, normalizing 
 Example of the train DF:
 
 ![Image](https://github.com/user-attachments/assets/ee1393a0-d736-41ba-9860-e8e6115e641e)
-
 
 
 ## Model architecture
